@@ -1,0 +1,26 @@
+<h3>Directivas de Angular</h3>
+
+- Atributo: alterar la apariencia o comportamiento de un elemento del DOM
+- Estrcturales: alterar la estructura del DOM
+
+<br/>
+
+<span *ngIf="toggle">Toggle</span>
+
+<br/>
+<button (click)="onToggle()">Toggle</button>
+
+<div class="miClase">
+   <p *ngFor="let curso of cursos">
+        <span [ngClass]="curso.hecho ? 'hecho' : 'porHacer'">{{curso.nombre}}</span>
+   </p>
+</div>
+
+<container [ngSwitch]="style">
+    <p *ngSwitchCase="'italic'">Italic</p>
+    <p *ngSwitchCase="'normal'">Normal</p>
+    <p *ngSwitchCase="'Oblique'">Oblique</p>
+    <p *ngSwitchDefault>No sé</p>
+</container>
+
+<input [(ngModel)]="style"/>

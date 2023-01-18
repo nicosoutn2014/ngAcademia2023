@@ -1,6 +1,9 @@
-<p>componente-prueba works!</p>
-<h3>{{title}}</h3>
+<h2>Comunicacion entre componentes padre e hijo - Input, Output</h2>
+
+<h3>Componente Padre</h3>
+
 <button (click)="onTitleChange()">Cambiar titulo</button>
 
+<app-componente-prueba2 [counter]="contador" [title]="title" (newItemEvent)="addItem($event)"></app-componente-prueba2>
 
-<app-componente-prueba2></app-componente-prueba2>
+<h4>Elementos que me envió el componente hijo: {{items | json}}</h4>
