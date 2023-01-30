@@ -12,9 +12,9 @@ export class ComponentePruebaComponent {
   items: string[] = []
 
   constructor() {
-    this.myInterval = setInterval(() => {
+    /*this.myInterval = setInterval(() => {
       this.contador += 1
-    }, 2000);
+    }, 2000);*/
   }
 
   onTitleChange() {

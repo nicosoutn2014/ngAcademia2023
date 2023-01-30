@@ -1,0 +1,27 @@
+<h3>Angular Forms</h3>
+<form (ngSubmit)="onSubmit()" [formGroup]="contactForm">
+    <label>Nombre</label>
+    <input type="text" formControlName="name" />
+    <div style="color: indianred"
+        *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.errors?.['required']"
+    >
+        *Este campo es obligatorio
+    </div>
+    <br />
+    <label>Apellido</label>
+    <input type="text" formControlName="lastname" />
+    <br />
+    <label>Edad</label>
+    <input type="number" formControlName="age" />
+    <div style="color: indianred"
+        *ngIf="contactForm.get('age')?.touched && contactForm.get('age')?.errors?.['min']"
+    >
+        La edad mínima es 18
+    </div>
+    <br />
+    <label>Email</label>
+    <input type="email" formControlName="email" />
+    <br />
+    <br />
+    <button type="submit">Enviar Datos</button>
+</form>
