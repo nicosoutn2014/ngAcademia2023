@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, SimpleChanges, EventEmitter, Output } from '@angular/core';
+import { OnInit, Input, SimpleChanges, EventEmitter, Output, Component } from '@angular/core';
 
 @Component({
   selector: 'app-componente-prueba2',

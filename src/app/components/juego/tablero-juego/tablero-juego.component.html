@@ -1,0 +1,16 @@
+<table id="jugadores">
+    <tr>
+        <th>Nombre</th>
+        <th>Civilizacion</th>
+        <th>Cant. edificios</th>
+        <th>Acciones</th>
+    </tr>
+    <tr *ngFor="let jugador of jugadores">
+        <td>{{ jugador.nombre }}</td>
+        <td>{{ jugador.civilizacion }}</td>
+        <td>{{ jugador.edificios.length }}</td>
+        <td><button (click)="seleccionarJugador(jugador.idJugador)">Crear edificio</button></td>
+      </tr>
+</table>
+<br><br>
+<app-crear-edificio (edificioCreado)="agregarEdificio($event)" [(idJugador)]="idJugadorSeleccionado" *ngIf="idJugadorSeleccionado!=0"></app-crear-edificio>

@@ -1,0 +1,23 @@
+#jugadores {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    max-width: 40vw;
+    width: 100%;
+  }
+  
+#jugadores td, #jugadores th {
+border: 1px solid #ddd;
+padding: 8px;
+}
+
+#jugadores tr:nth-child(even){background-color: #f2f2f2;}
+
+#jugadores tr:hover {background-color: #ddd;}
+
+#jugadores th {
+padding-top: 12px;
+padding-bottom: 12px;
+text-align: left;
+background-color: lightseagreen;
+color: white;
+}

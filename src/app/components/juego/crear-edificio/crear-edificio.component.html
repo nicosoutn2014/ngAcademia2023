@@ -1,0 +1,19 @@
+<form [formGroup]="nuevoEdificio" (ngSubmit)="crearEdificio()">
+    <h2>Crear un nuevo edificio</h2>
+    <br><br>
+        Nombre
+        <input formControlName="nombre"  required>
+        <br><br>
+        Ataque
+        <input formControlName="ataque">
+        <br><br>
+        Vida
+        <input formControlName="vida">
+        <br><br>
+    <button type="submit">
+        Aceptar
+    </button>
+    <button (click)="cancelar()">
+        Cancelar
+    </button>
+</form>
