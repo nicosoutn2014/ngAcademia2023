@@ -1,9 +1,29 @@
-<app-forms></app-forms>
-<br/><br/><br/>
--------------------------------
-<br/><br/><br/>
-<app-directivas-formularios></app-directivas-formularios>
-<br/><br/><br/>
--------------------------------
-<br/><br/><br/>
-<app-componente-prueba></app-componente-prueba>
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>My App</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>
+<div>
+    <ul>
+        <li>
+            <a routerLink="/">Home</a>
+        </li>
+        <li>
+            <a routerLink="clase2">Clase 2</a>
+        </li>
+        <li>
+            <a routerLink="clase3">Clase 3</a>
+        </li>
+    </ul>
+    <button type='submit' (click)="goToForms()">Ir a Forms</button>
+    <button type='submit' (click)="login()">Login</button>
+</div>
+<router-outlet></router-outlet>

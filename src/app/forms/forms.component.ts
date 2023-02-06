@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-forms',
@@ -8,19 +9,23 @@ import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms'
 })
 export class FormsComponent implements OnInit {
   contactForm!: FormGroup 
+  params: any
 
-  constructor(private readonly fb: FormBuilder) {}
+  constructor(private readonly fb: FormBuilder, private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.contactForm = this.initForm()
+    this.route.params.subscribe(paramMap => {
+      this.params = paramMap
+      this.contactForm = this.initForm()
+    })
   }
 
   initForm(): FormGroup {
     return this.fb.group({
-      name: ['', Validators.required],
+      name: [this.params?.userName || '', Validators.required],
       lastname: ['', Validators.required],
       age: [0, [Validators.required, Validators.min(18)]],
-      email: ['', [Validators.email, Validators.required]]
+      email: [this.params?.userEmail || '', [Validators.email, Validators.required]]
     })
   }
 
